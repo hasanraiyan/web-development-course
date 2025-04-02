@@ -2,12 +2,14 @@ import express from 'express';
 import colors from 'colors';
 import logger from "./logger.js";
 import morgan from "morgan";
+import 'dotenv/config'
 
+// ✅ Improved logging middleware with colors
 const morganFormat = ":method :url :status :response-time ms";
 
 
 const app = express();
-const PORT = 8080;
+const PORT = process.env.PORT || 8080;
 
 app.use(express.json());
 
